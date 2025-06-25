@@ -1,8 +1,7 @@
 steps:
 # 1. Build Docker image
 - name: 'gcr.io/cloud-builders/docker'
-args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-
-repo/my-flask-app:$SHORT_SHA', '.']
+args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA', '.']
 # 2. Push Docker image ke Artifact Registry
 - name: 'gcr.io/cloud-builders/docker'
 args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA']
