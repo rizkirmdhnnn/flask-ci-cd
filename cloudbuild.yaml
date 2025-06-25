@@ -24,3 +24,9 @@ steps:
       - '--allow-unauthenticated'
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA'
+options:
+  # Replace 'your-logs-bucket' with the name of your Cloud Storage bucket
+  # It should be in the format 'gs://your-bucket-name'
+  logsBucket: 'gs://flask-app-demo1321'
+  # If you are using a custom service account, specify it here
+  # serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/your-custom-service-account@$PROJECT_ID.iam.gserviceaccount.com'
