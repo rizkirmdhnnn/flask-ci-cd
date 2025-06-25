@@ -5,14 +5,12 @@ args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-
 repo/my-flask-app:$SHORT_SHA', '.']
 # 2. Push Docker image ke Artifact Registry
 - name: 'gcr.io/cloud-builders/docker'
-args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-
-flask-app:$SHORT_SHA']
+args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA']
 # 3. Deploy ke Cloud Run
 - name: 'gcr.io/google-appengine/exec-wrapper'
 args:
 - '-i'
-- 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-
-app:$SHORT_SHA'
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA'
 - '-s'
 - 'my-flask-app'
 - '--'
@@ -21,8 +19,7 @@ app:$SHORT_SHA'
 - 'deploy'
 - 'my-flask-app'
 - '--image'
-- 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-
-app:$SHORT_SHA'
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA'
 - '--region'
 - 'us-central1'
 - '--platform'
@@ -30,5 +27,4 @@ app:$SHORT_SHA'
 - '--allow-unauthenticated'
 # Simpan image yang di-deploy untuk referensi
 images:
-- 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-
-app:$SHORT_SHA'
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/my-app-repo/my-flask-app:$SHORT_SHA'
